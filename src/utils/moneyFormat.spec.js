@@ -1,19 +1,16 @@
 const moneyFormat = require('./moneyFormat')
 
-const value1 = moneyFormat(19.99) // $19.99
-assertEquals(value1, '$19.99')
-
-const value2 = moneyFormat(250) // $250.00
-assertEquals(value2, '$250.00')
-
-const value3 = moneyFormat(9500.95) // $9,500.95
-assertEquals(value3, '$9,500.95')
-
-function assertEquals (result, expectedResult) {
-  if (result !== expectedResult) {
-    throw new Error(
-            `This test is failing: Expected "${expectedResult}", got "${result}"`
-    )
-  }
-}
-console.log('All ok')
+describe('moneyFormat', () => {
+  it('works with two decimals', () => {
+    const result = moneyFormat(19.99)
+    expect(result).toEqual('$19.99')
+  })
+  it('works with 3 integers', () => {
+    const result = moneyFormat(250.00)
+    expect(result).toEqual('$250.00')
+  })
+  it('works with two decimals', () => {
+    const result = moneyFormat(9500.95)
+    expect(result).toEqual('$9,500.95')
+  })
+})

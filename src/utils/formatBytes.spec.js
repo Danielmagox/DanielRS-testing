@@ -1,16 +1,20 @@
 const formatBytes = require('./formatBytes')
 
-assertEquals(formatBytes(900), '900MB')
-assertEquals(formatBytes(1900), '1GB 900MB')
-assertEquals(formatBytes(568200), '568GB 200MB')
-assertEquals(formatBytes(1234567), '1TB 234GB 567MB')
-
-function assertEquals (result, expectedResult) {
-  if (result !== expectedResult) {
-    throw new Error(
-            `This test is failing: Expected "${expectedResult}", got "${result}"`
-    )
-  }
-}
-
-console.log('All is good')
+describe('formatBytes', () => {
+  it('works with only MB', () => {
+    const result = formatBytes(900)
+    expect(result).toEqual('900MB')
+  })
+  it('works with GB and MB', () => {
+    const result = formatBytes(1900)
+    expect(result).toEqual('1GB 900MB')
+  })
+  it('works with GB and MB', () => {
+    const result = formatBytes(568200)
+    expect(result).toEqual('568GB 200MB')
+  })
+  it('works with TB GB and MB', () => {
+    const result = formatBytes(1234567)
+    expect(result).toEqual('1TB 234GB 567MB')
+  })
+})
