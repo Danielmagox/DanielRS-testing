@@ -29,7 +29,6 @@
     "@babel/plugin-proposal-class-properties": "7.10.4",
     "@babel/plugin-transform-modules-commonjs": "7.10.4",
     "babel-jest": "^26.3.0",
-    "eslint": "^7.9.0",
     "eslint-config-prettier": "6.11.0",
     "eslint-plugin-prettier": "3.1.4",
     "jest": "^26.4.2",
@@ -43,7 +42,9 @@
       "./node_modules",
       "./src"
     ],
-    "modulePathIgnorePatterns": ["<rootDir>/build/"],
+    "modulePathIgnorePatterns": [
+      "<rootDir>/build/"
+    ],
     "moduleFileExtensions": [
       "ts",
       "tsx",
