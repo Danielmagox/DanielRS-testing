@@ -6,6 +6,10 @@ export class TextFileReaderFake extends TextFileReader {
     this.text = text;
   }
 
+  setText(text) {
+    this.text = text;
+  }
+
   read() {
     return this.text;
   }

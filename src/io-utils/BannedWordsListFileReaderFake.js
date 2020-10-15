@@ -1,9 +1,13 @@
 import { BannedWordsListFileReader } from "./BannedWordsListFileReader";
 
-class BannedWordsListFileReaderFake extends BannedWordsListFileReader {
+export class BannedWordsListFileReaderFake extends BannedWordsListFileReader {
   constructor(bannedWords) {
     super();
-    this.text = bannedWords;
+    this.bannedWords = bannedWords;
+  }
+
+  setWords(bannedWords) {
+    this.bannedWords = bannedWords;
   }
 
   read() {
